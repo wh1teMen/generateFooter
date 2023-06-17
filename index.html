@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <script>
+        var arrContacts = ['Номер: +7(999)999-99-99', 'Эл.почта: example@gmail.com', 'Адрес: г.Разработчик, ул. Подвальная, д.5']
+        generateFooter(arrContacts, 'SiteName', 'dimgray', 'white');
+        /*Функция принимает: массив контактов, имя сайта, цвет фона, цвет текста и генерирует footer
+        с переданными значениями*/        
+        function generateFooter(contacts, title, bgcolor, fontcolor) {
+            let contTmp = '';
+            for (var el of contacts) {
+                contTmp += el + '<br>';
+            }
+            document.write(
+                `<footer style="background-color: ${bgcolor};">        
+        <div class="leftContact">
+            <p style="color: ${fontcolor};">${contTmp}</p>
+        </div>
+        <div class="rightTitle">
+            <h4 style="color: ${fontcolor};">${title} &copy2023 г.</h4>
+        </div> 
+    </footer>`
+            );
+        }
+
+    </script>
+</body>
+
+</html>
